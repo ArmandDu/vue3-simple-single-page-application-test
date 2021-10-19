@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NavBar/>
+  <ParticipantList/>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import {Options, Vue} from 'vue-class-component';
+import NavBar from "./components/NavBar.vue";
+import ParticipantList from "./components/ParticipantList.vue"
 
-export default {
-  name: 'App',
+@Options({
   components: {
-    HelloWorld
-  }
+    NavBar,
+    ParticipantList
+  },
+})
+export default class App extends Vue {
 }
 </script>
 
-<style>
+<style lang="scss">
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  background-color: #f2f2f2;
+  height: 100%;
+
 }
+
+button {
+  height: 40px;
+  margin: 16px 16px 16px auto;
+  border: none;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+
 </style>
